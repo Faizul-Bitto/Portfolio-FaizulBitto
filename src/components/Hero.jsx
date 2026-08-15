@@ -1,47 +1,47 @@
+import { ArrowDownRight, Code2, Mail, Server, Terminal, Zap } from 'lucide-react'
 import { useEffect, useRef } from 'react'
-import { ArrowDownRight, Mail, Terminal, Code2, Zap, Server } from 'lucide-react'
 
-function Hero() {
-  const typingRef = useRef(null)
+function Hero () {
+  const typingRef = useRef( null )
 
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  const scrollTo = ( id ) => {
+    document.getElementById( id )?.scrollIntoView( { behavior: 'smooth' } )
   }
 
   // Typewriter effect for the main role
-  useEffect(() => {
+  useEffect( () => {
     const typingEl = typingRef.current
-    if (!typingEl) return
+    if ( !typingEl ) return
 
     const fullText = typingEl.textContent
     typingEl.textContent = ''
-    typingEl.classList.add('typing-cursor')
+    typingEl.classList.add( 'typing-cursor' )
 
     let charIndex = 0
 
-    function typeChar() {
-      if (charIndex < fullText.length) {
-        typingEl.textContent += fullText.charAt(charIndex)
+    function typeChar () {
+      if ( charIndex < fullText.length ) {
+        typingEl.textContent += fullText.charAt( charIndex )
         charIndex++
-        setTimeout(typeChar, 30 + Math.random() * 25)
+        setTimeout( typeChar, 30 + Math.random() * 25 )
       } else {
-        typingEl.classList.remove('typing-cursor')
-        const cursorSpan = document.createElement('span')
+        typingEl.classList.remove( 'typing-cursor' )
+        const cursorSpan = document.createElement( 'span' )
         cursorSpan.className = 'typing-cursor'
         cursorSpan.style.color = '#06b6d4'
         cursorSpan.style.fontWeight = '100'
         cursorSpan.textContent = '|'
-        typingEl.parentNode.appendChild(cursorSpan)
+        typingEl.parentNode.appendChild( cursorSpan )
       }
     }
 
-    setTimeout(typeChar, 500)
-  }, [])
+    setTimeout( typeChar, 500 )
+  }, [] )
 
   // Terminal typing effect
-  useEffect(() => {
-    const terminalBody = document.getElementById('terminal-body')
-    if (!terminalBody) return
+  useEffect( () => {
+    const terminalBody = document.getElementById( 'terminal-body' )
+    if ( !terminalBody ) return
 
     const lines = [
       { text: '$ whoami', color: 'text-gray-500' },
@@ -58,62 +58,62 @@ function Hero() {
     let charIndex = 0
     let lineEl = null
 
-    function typeLine() {
-      if (lineIndex >= lines.length) {
-        const cursor = document.createElement('span')
+    function typeLine () {
+      if ( lineIndex >= lines.length ) {
+        const cursor = document.createElement( 'span' )
         cursor.className = 'typing-cursor'
         cursor.style.color = '#06b6d4'
         cursor.textContent = '|'
-        terminalBody.appendChild(cursor)
+        terminalBody.appendChild( cursor )
         return
       }
 
-      const line = lines[lineIndex]
-      if (charIndex === 0) {
-        lineEl = document.createElement('div')
+      const line = lines[ lineIndex ]
+      if ( charIndex === 0 ) {
+        lineEl = document.createElement( 'div' )
         lineEl.className = 'terminal-line'
-        terminalBody.appendChild(lineEl)
+        terminalBody.appendChild( lineEl )
       }
 
-      if (charIndex < line.text.length) {
-        const char = line.text.charAt(charIndex)
-        const span = document.createElement('span')
+      if ( charIndex < line.text.length ) {
+        const char = line.text.charAt( charIndex )
+        const span = document.createElement( 'span' )
         span.className = line.color
         span.textContent = char
-        lineEl.appendChild(span)
+        lineEl.appendChild( span )
         charIndex++
-        setTimeout(typeLine, 8)
+        setTimeout( typeLine, 8 )
       } else {
         lineIndex++
         charIndex = 0
-        setTimeout(typeLine, 250)
+        setTimeout( typeLine, 250 )
       }
     }
 
-    setTimeout(typeLine, 800)
+    setTimeout( typeLine, 800 )
 
     return () => {
       terminalBody.innerHTML = ''
     }
-  }, [])
+  }, [] )
 
   // Floating tech badges animation
-  useEffect(() => {
-    const badges = document.querySelectorAll('.float-badge')
-    badges.forEach((badge, i) => {
-      badge.style.animationDelay = `${i * 1.5}s`
-    })
-  }, [])
+  useEffect( () => {
+    const badges = document.querySelectorAll( '.float-badge' )
+    badges.forEach( ( badge, i ) => {
+      badge.style.animationDelay = `${ i * 1.5 }s`
+    } )
+  }, [] )
 
   return (
     <section className="min-h-screen pt-28 pb-16 flex items-center relative z-10">
       <div className="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7 space-y-6">
-          {/* Tech status badge */}
+          {/* Tech status badge */ }
           <div className="reveal flex items-center gap-3">
             <span className="hidden sm:inline-flex items-center gap-2 text-sm text-gray-500 font-mono">
               <Code2 className="w-4 h-4 text-cyan-400" />
-              <span className="text-cyan-400">{'<'}</span>backend<span className="text-cyan-400">{'/>'}</span>
+              <span className="text-cyan-400">{ '<' }</span>backend<span className="text-cyan-400">{ '/>' }</span>
             </span>
           </div>
 
@@ -124,41 +124,41 @@ function Hero() {
             </h1>
           </div>
 
-          <div className="reveal" style={{ transitionDelay: '0.1s' }}>
+          <div className="reveal" style={ { transitionDelay: '0.1s' } }>
             <p className="text-xl font-medium text-cyan-400/90 flex items-center gap-2">
               <Terminal className="w-5 h-5" />
-              <span ref={typingRef} id="typing-text">
+              <span ref={ typingRef } id="typing-text">
                 Backend Engineer • Full Stack Developer
               </span>
             </p>
           </div>
 
-          <div className="reveal" style={{ transitionDelay: '0.2s' }}>
+          <div className="reveal" style={ { transitionDelay: '0.2s' } }>
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-xl">
               Building robust, scalable backend systems with clean API design
-              and solid database architecture. Specialized in{' '}
-              <span className="text-cyan-300 font-semibold">FastAPI</span>,{' '}
-              <span className="text-indigo-300 font-semibold">Node.js</span>,{' '}
-              <span className="text-purple-300 font-semibold">NestJS</span>, and{' '}
+              and solid database architecture. Specialized in{ ' ' }
+              <span className="text-cyan-300 font-semibold">FastAPI</span>,{ ' ' }
+              <span className="text-indigo-300 font-semibold">Node.js</span>,{ ' ' }
+              <span className="text-purple-300 font-semibold">NestJS</span>, and{ ' ' }
               <span className="text-red-300 font-semibold">Laravel</span>.
             </p>
           </div>
 
-          {/* Tech stack quick chips */}
-          <div className="reveal flex flex-wrap gap-2" style={{ transitionDelay: '0.25s' }}>
-            {['Python', 'FastAPI', 'Node.js', 'NestJS', 'Laravel', 'PostgreSQL'].map((tech) => (
+          {/* Tech stack quick chips */ }
+          <div className="reveal flex flex-wrap gap-2" style={ { transitionDelay: '0.25s' } }>
+            { [ 'Python', 'FastAPI', 'Node.js', 'NestJS', 'Laravel', 'PostgreSQL' ].map( ( tech ) => (
               <span
-                key={tech}
+                key={ tech }
                 className="skill-tag px-3 py-1 rounded-lg bg-gray-800/60 border border-gray-700 text-xs font-medium text-gray-300"
               >
-                {tech}
+                { tech }
               </span>
-            ))}
+            ) ) }
           </div>
 
-          <div className="reveal flex flex-wrap gap-4 pt-2" style={{ transitionDelay: '0.3s' }}>
+          <div className="reveal flex flex-wrap gap-4 pt-2" style={ { transitionDelay: '0.3s' } }>
             <button
-              onClick={() => scrollTo('projects')}
+              onClick={ () => scrollTo( 'projects' ) }
               className="btn-tech btn-primary-tech"
             >
               <span className="btn-corner tl"></span>
@@ -169,7 +169,7 @@ function Hero() {
               <ArrowDownRight className="w-4 h-4 relative z-10" />
             </button>
             <button
-              onClick={() => scrollTo('contact')}
+              onClick={ () => scrollTo( 'contact' ) }
               className="btn-tech btn-outline-tech"
             >
               <span className="btn-corner tl"></span>
@@ -181,8 +181,8 @@ function Hero() {
             </button>
           </div>
 
-          {/* Quick social links */}
-          <div className="reveal flex items-center gap-3 pt-2" style={{ transitionDelay: '0.4s' }}>
+          {/* Quick social links */ }
+          <div className="reveal flex items-center gap-3 pt-2" style={ { transitionDelay: '0.4s' } }>
             <a
               href="https://github.com/Faizul-Bitto"
               target="_blank"
@@ -223,7 +223,7 @@ function Hero() {
 
         <div className="md:col-span-5 flex flex-col items-center gap-8 reveal-scale">
           <div className="hero-img-container relative rounded-2xl">
-            {/* Floating tech badges */}
+            {/* Floating tech badges */ }
             <div className="float-badge absolute -top-4 -right-4 z-10 px-3 py-1.5 rounded-lg bg-gray-900/90 border border-cyan-500/50 text-cyan-400 text-xs font-mono shadow-lg shadow-cyan-500/20 backdrop-blur">
               <Zap className="w-3.5 h-3.5 inline mr-1" />
               API
@@ -233,13 +233,13 @@ function Hero() {
               Backend
             </div>
             <img
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Faizul Islam Bhuiyan"
               className="w-72 h-72 sm:w-80 sm:h-80 object-cover rounded-2xl border border-cyan-500/30 shadow-2xl"
             />
           </div>
 
-          {/* Terminal-style card */}
+          {/* Terminal-style card */ }
           <div className="w-full max-w-sm glass-card rounded-xl overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-900/80 border-b border-gray-800">
               <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
@@ -252,7 +252,7 @@ function Hero() {
         </div>
       </div>
 
-      <style>{`
+      <style>{ `
         .float-badge {
           animation: floatBadge 3s ease-in-out infinite;
         }
