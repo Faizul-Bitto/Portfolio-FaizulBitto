@@ -11,6 +11,7 @@ import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import './App.css'
 
 function App() {
@@ -247,6 +248,7 @@ function App() {
       <Contact />
       <Footer />
       <BackToTop />
+      <SpeedInsights />
     </>
   )
 }
