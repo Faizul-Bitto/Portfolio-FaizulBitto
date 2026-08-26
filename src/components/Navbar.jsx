@@ -68,7 +68,7 @@ function Navbar() {
           <h1
             id="logo"
             onClick={handleLogoClick}
-            className="text-2xl font-extrabold tracking-tight cursor-pointer hover:opacity-80 transition font-mono"
+            className="text-xl sm:text-2xl font-extrabold tracking-tight cursor-pointer hover:opacity-80 transition font-mono whitespace-nowrap"
           >
             <span className="text-cyan-400">{'<'}</span>
             <span className="gradient-text">FAIZUL</span>
@@ -89,7 +89,7 @@ function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <a
               href="https://drive.google.com/drive/folders/1Ym63we7abOdsyJLNTRzJO0hhNCFTmElc?usp=sharing"
               target="_blank"

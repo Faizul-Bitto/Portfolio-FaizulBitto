@@ -991,6 +991,13 @@ body.bg-grid {
    RESPONSIVE FIXES
    ============================================ */
 @media (max-width: 640px) {
+  /* Compact navbar buttons on small screens so they don't overflow
+     and collide with the logo title */
+  .btn-tech {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.7rem;
+  }
+
   .glow-1 {
     width: 350px;
     height: 350px;

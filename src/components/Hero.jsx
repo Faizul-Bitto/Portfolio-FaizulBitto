@@ -108,7 +108,7 @@ function Hero () {
   return (
     <section className="min-h-screen pt-28 pb-16 flex items-center relative z-10">
       <div className="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-12 gap-12 items-center">
-        <div className="md:col-span-7 space-y-6">
+        <div className="md:col-span-7 space-y-6 text-center md:text-left">
           {/* Tech status badge */ }
           <div className="reveal flex items-center gap-3">
             <span className="hidden sm:inline-flex items-center gap-2 text-sm text-gray-500 font-mono">
@@ -145,7 +145,7 @@ function Hero () {
           </div>
 
           {/* Tech stack quick chips */ }
-          <div className="reveal flex flex-wrap gap-2" style={ { transitionDelay: '0.25s' } }>
+          <div className="reveal flex flex-wrap gap-2 justify-center md:justify-start" style={ { transitionDelay: '0.25s' } }>
             { [ 'Python', 'FastAPI', 'Node.js', 'NestJS', 'Laravel', 'PostgreSQL' ].map( ( tech ) => (
               <span
                 key={ tech }
@@ -156,7 +156,7 @@ function Hero () {
             ) ) }
           </div>
 
-          <div className="reveal flex flex-wrap gap-4 pt-2" style={ { transitionDelay: '0.3s' } }>
+          <div className="reveal flex flex-wrap gap-4 pt-2 justify-center md:justify-start" style={ { transitionDelay: '0.3s' } }>
             <button
               onClick={ () => scrollTo( 'projects' ) }
               className="btn-tech btn-primary-tech"
@@ -182,7 +182,7 @@ function Hero () {
           </div>
 
           {/* Quick social links */ }
-          <div className="reveal flex items-center gap-3 pt-2" style={ { transitionDelay: '0.4s' } }>
+          <div className="reveal flex items-center gap-3 pt-2 justify-center md:justify-start" style={ { transitionDelay: '0.4s' } }>
             <a
               href="https://github.com/Faizul-Bitto"
               target="_blank"
