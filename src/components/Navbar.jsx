@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, X } from 'lucide-react'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -105,7 +105,7 @@ function Navbar() {
             </a>
 
             <div
-              className={`hamburger ${menuOpen ? 'open' : ''}`}
+              className="hamburger"
               onClick={() => setMenuOpen(!menuOpen)}
             >
               <span></span>
@@ -123,6 +123,13 @@ function Navbar() {
       ></div>
 
       <div id="mobile-menu" className={`${menuOpen ? 'open' : ''}`}>
+        <button
+          onClick={() => setMenuOpen(false)}
+          className="self-end p-2 text-gray-400 hover:text-cyan-400 transition mb-4"
+          aria-label="Close menu"
+        >
+          <X className="w-6 h-6" />
+        </button>
         {navLinks.map((link) => (
           <a
             key={link.href}

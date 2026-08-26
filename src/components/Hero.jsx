@@ -125,8 +125,8 @@ function Hero () {
           </div>
 
           <div className="reveal" style={ { transitionDelay: '0.1s' } }>
-            <p className="text-xl font-medium text-cyan-400/90 flex items-center gap-2">
-              <Terminal className="w-5 h-5" />
+            <p className="text-sm sm:text-xl font-medium text-cyan-400/90 flex items-end justify-center lg:justify-start gap-2">
+              <Terminal className="hidden sm:block w-5 h-5" />
               <span ref={ typingRef } id="typing-text">
                 Backend Engineer • Full Stack Developer
               </span>
@@ -134,7 +134,7 @@ function Hero () {
           </div>
 
           <div className="reveal" style={ { transitionDelay: '0.2s' } }>
-            <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-xl">
+            <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
               Building robust, scalable backend systems with clean API design
               and solid database architecture. Specialized in{ ' ' }
               <span className="text-cyan-300 font-semibold">FastAPI</span>,{ ' ' }
