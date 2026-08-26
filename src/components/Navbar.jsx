@@ -76,7 +76,7 @@ function Navbar() {
             <span className="text-cyan-400">{'/>'}</span>
           </h1>
 
-           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+           <div className="hidden lg:flex gap-6 text-sm font-medium text-gray-300">
             {navLinks.map((link) => (
               <a
                 key={link.href}

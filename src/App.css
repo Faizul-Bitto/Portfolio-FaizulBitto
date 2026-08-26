@@ -793,7 +793,7 @@ body.bg-grid {
   background: #06b6d4;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .hamburger { display: flex; }
 }
 

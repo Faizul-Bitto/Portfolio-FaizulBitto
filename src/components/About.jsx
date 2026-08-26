@@ -66,7 +66,7 @@ function About() {
 
           <div className="flex flex-col justify-center">
             {/* Focus areas */}
-            <div className="grid grid-cols-2 gap-4 reveal-stagger">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal-stagger">
               {focusAreas.map((area) => {
                 const Icon = area.icon
                 return (

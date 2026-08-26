@@ -54,11 +54,11 @@ function Contact() {
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:fibhuiyanbitto06@gmail.com"
-                className="social-icon inline-flex items-center gap-3 px-5 py-3.5 rounded-xl bg-gray-900 border border-gray-800 text-gray-200 hover:border-cyan-500/50 hover:text-cyan-400 transition"
+                className="social-icon inline-flex items-center gap-3 px-3 py-3 sm:px-5 sm:py-3.5 rounded-xl bg-gray-900 border border-gray-800 text-gray-200 hover:border-cyan-500/50 hover:text-cyan-400 transition"
               >
                 <Mail className="w-5 h-5" />
                 <span className="font-medium">Email Me</span>
-                <span className="ml-auto text-xs text-gray-500 font-mono">fibhuiyanbitto06@gmail.com</span>
+                <span className="hidden sm:inline ml-auto text-xs text-gray-500 font-mono">fibhuiyanbitto06@gmail.com</span>
               </a>
 
               <a
